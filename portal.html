@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Portal — Custom By Thu Win</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+  <nav id="navbar" class="scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logo.png" alt="Custom By Thu Win" class="nav-logo-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="nav-logo-text" style="display:none;">
+          <span class="logo-main">Custom By Thu Win</span>
+          <span class="logo-sub">Luxury Jewelry</span>
+        </span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home"        class="nav-link">Home</a></li>
+        <li><a href="index.html#about"       class="nav-link">About</a></li>
+        <li><a href="index.html#timeline"    class="nav-link">Timeline</a></li>
+        <li><a href="index.html#portfolio"   class="nav-link">Portfolios</a></li>
+        <li><a href="index.html#appointment" class="nav-link">Book Appointment</a></li>
+        <li><a href="portal.html"            class="nav-link cta-nav active">Client Portal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       PORTAL HERO HEADER
+  ══════════════════════════════════════ -->
+  <section class="portal-header">
+    <div class="portal-header-bg"></div>
+    <div class="portal-header-content">
+      <p class="section-eyebrow">Exclusive Access</p>
+      <h1 class="section-title">Client Portal</h1>
+      <div class="gold-divider center"></div>
+      <p class="portal-header-desc">
+        Track your custom jewelry journey in real time.<br />
+        Enter your credentials to view your project status.
+      </p>
+    </div>
+    <div class="hero-corner tl"></div>
+    <div class="hero-corner tr"></div>
+    <div class="hero-corner bl"></div>
+    <div class="hero-corner br"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       MAIN PORTAL AREA
+  ══════════════════════════════════════ -->
+  <main class="portal-main">
+    <div class="container">
+
+      <!-- ── LOGIN FORM ── -->
+      <div class="portal-login-wrap" id="loginWrap">
+        <form class="portal-login-form" id="loginForm">
+          <div class="portal-login-icon">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h2 class="portal-login-title">Access Your Projects</h2>
+          <p class="portal-login-sub">
+            Enter the email address and access code provided to you when your order was confirmed.
+          </p>
+
+          <div class="form-group">
+            <label for="portalEmail">Email Address <span class="req">*</span></label>
+            <input type="email" id="portalEmail" placeholder="your@email.com" required />
+          </div>
+
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label for="portalCode">Project Access Code <span class="req">*</span></label>
+            <input type="text" id="portalCode" placeholder="e.g. CBTW-2024-001" required
+                   autocomplete="off" style="letter-spacing:0.1em;" />
+            <span class="portal-hint">
+              <i class="fa-solid fa-circle-info"></i>
+              Your access code was sent to you by email when your project started.
+            </span>
+          </div>
+
+          <div id="loginError" class="portal-error" style="display:none;">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span id="loginErrorMsg">Invalid email or access code. Please try again.</span>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-lg portal-submit" id="loginBtn">
+            <i class="fa-solid fa-unlock-keyhole"></i> View My Projects
+          </button>
+
+          <p class="portal-contact-note">
+            Don't have an access code?
+            <a href="index.html#appointment">Book a consultation</a> or
+            <a href="mailto:info@wingroupjewelry.com">contact us</a>.
+          </p>
+        </form>
+      </div>
+
+      <!-- ── PROJECTS DASHBOARD ── -->
+      <div class="portal-dashboard" id="portalDashboard" style="display:none;">
+
+        <div class="portal-welcome">
+          <div class="portal-welcome-text">
+            <p class="section-eyebrow">Welcome Back</p>
+            <h2 class="portal-welcome-name" id="welcomeName">Your Projects</h2>
+          </div>
+          <button class="btn btn-outline btn-sm portal-logout" id="logoutBtn">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+          </button>
+        </div>
+
+        <div id="projectsLoading" class="portal-loading">
+          <div class="portal-spinner"></div>
+          <p>Fetching your projects from our studio…</p>
+        </div>
+
+        <div id="projectsError" class="portal-error-block" style="display:none;">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <p id="projectsErrorMsg">Something went wrong. Please try again later.</p>
+          <button class="btn btn-outline btn-sm" onclick="loadProjects()">Try Again</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid"></div>
+
+        <div id="noProjects" class="portal-empty" style="display:none;">
+          <i class="fa-regular fa-folder-open"></i>
+          <p>No projects found for your account yet.</p>
+          <p class="portal-empty-sub">If you believe this is an error, please <a href="mailto:info@wingroupjewelry.com">contact us</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-main">Custom By Thu Win</span>
+        <span class="logo-sub">Luxury Jewelry</span>
+        <p class="footer-tagline">Your vision. Our craft. A treasure forever.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#timeline">Timeline</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#appointment">Book Appointment</a>
+        <a href="portal.html" style="color:var(--gold);">Client Portal</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/CustomByThuWin" target="_blank" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Custom By Thu Win. All rights reserved. &nbsp;|&nbsp; <a href="portal.html" style="color:var(--gold);opacity:0.7;">Client Portal</a></p>
+    </div>
+  </footer>
+
+  <script src="portal.js"></script>
+</body>
+</html>
