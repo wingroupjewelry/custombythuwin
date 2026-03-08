@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom By Thu Win | Luxury Jewelry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <!-- Logo image: add your logo file as img/logo.png (or .svg, .jpg)
+             It will show instead of the text. Remove the img tag to go back to text. -->
+        <img src="img/logo.png" alt="Custom By Thu Win" class="nav-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <span class="nav-logo-text" style="display:none;">
+          <span class="logo-main">Custom By Thu Win</span>
+          <span class="logo-sub">Luxury Jewelry</span>
+        </span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"        class="nav-link">Home</a></li>
+        <li><a href="#about"       class="nav-link">About</a></li>
+        <li><a href="#timeline"    class="nav-link">Custom Jewelry Timeline</a></li>
+        <li><a href="#portfolio"   class="nav-link">Portfolios</a></li>
+        <li><a href="#appointment" class="nav-link cta-nav">Book Free Appointment</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       HERO — VIDEO SECTION
+  ══════════════════════════════════════ -->
+  <section id="home" class="hero">
+    <!-- Replace src with your own video file, e.g. src="video/hero.mp4" -->
+    <video class="hero-video" src="video/hero.mp4.MP4" autoplay muted loop playsinline poster="img/hero-poster.jpg"></video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Handcrafted · One of a Kind</p>
+      <h1 class="hero-title">Custom By<br /><em>Thu Win</em></h1>
+      <p class="hero-subtitle">
+        Where your vision becomes a timeless treasure.<br />
+        Bespoke luxury jewelry, designed just for you.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#appointment" class="btn btn-gold">Book Free Consultation</a>
+        <a href="#portfolio"   class="btn btn-outline">View Portfolio</a>
+      </div>
+      <div class="hero-scroll">
+        <span>Scroll to discover</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+    </div>
+    <!-- Decorative corner lines -->
+    <div class="hero-corner tl"></div>
+    <div class="hero-corner tr"></div>
+    <div class="hero-corner bl"></div>
+    <div class="hero-corner br"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       MARQUEE TICKER
+  ══════════════════════════════════════ -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>Bespoke Jewelry</span><span class="ticker-dot">✦</span>
+      <span>Custom Engagement Rings</span><span class="ticker-dot">✦</span>
+      <span>Fine Diamonds</span><span class="ticker-dot">✦</span>
+      <span>18K &amp; 22K Gold</span><span class="ticker-dot">✦</span>
+      <span>Handcrafted in Every Detail</span><span class="ticker-dot">✦</span>
+      <span>Bespoke Jewelry</span><span class="ticker-dot">✦</span>
+      <span>Custom Engagement Rings</span><span class="ticker-dot">✦</span>
+      <span>Fine Diamonds</span><span class="ticker-dot">✦</span>
+      <span>18K &amp; 22K Gold</span><span class="ticker-dot">✦</span>
+      <span>Handcrafted in Every Detail</span><span class="ticker-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════ -->
+  <section id="about" class="section about-section">
+    <div class="container about-grid">
+      <div class="about-image-wrap reveal">
+        <div class="about-img-frame">
+          <img src="img/about.jpg" alt="Custom By Thu Win - Jewellery Craftsmanship" />
+          <div class="about-badge">
+            <span class="badge-num">10+</span>
+            <span class="badge-text">Years of<br/>Craftsmanship</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal delay-1">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Crafted with Passion,<br /><em>Worn with Pride</em></h2>
+        <div class="gold-divider"></div>
+        <p class="about-body">
+          At <strong>Custom By Thu Win</strong>, every piece begins with a conversation.
+          We believe that fine jewelry is more than adornment — it is a story etched
+          in gold and stone, meant to be passed down through generations.
+        </p>
+        <p class="about-body">
+          From the first sketch to the final polish, each creation is handcrafted
+          with meticulous attention to detail, using only the finest metals and
+          ethically sourced diamonds.
+        </p>
+        <div class="about-values">
+          <div class="value-item">
+            <i class="fa-solid fa-certificate"></i>
+            <span>Certified Quality</span>
+          </div>
+          <div class="value-item">
+            <i class="fa-solid fa-hand-sparkles"></i>
+            <span>Handcrafted</span>
+          </div>
+          <div class="value-item">
+            <i class="fa-solid fa-leaf"></i>
+            <span>Ethically Sourced</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CUSTOM JEWELRY TIMELINE
+  ══════════════════════════════════════ -->
+  <section id="timeline" class="section timeline-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">The Journey</p>
+        <h2 class="section-title">Custom Jewelry<br /><em>Timeline</em></h2>
+        <div class="gold-divider center"></div>
+        <p class="section-desc">
+          Every masterpiece follows a thoughtful process — from the first dream
+          to the moment you hold your treasure.
+        </p>
+      </div>
+
+      <div class="timeline">
+
+        <!-- ── Step 1 ── -->
+        <div class="timeline-item reveal">
+          <div class="timeline-icon"><i class="fa-solid fa-comments"></i></div>
+          <div class="timeline-content">
+            <span class="tl-step">Step 01</span>
+            <h3>Free Consultation</h3>
+            <p>
+              We begin with a complimentary conversation to understand your vision,
+              occasion, style preferences, and budget. No commitment needed — just
+              bring your ideas and inspiration.
+            </p>
+            <span class="tl-duration"><i class="fa-regular fa-clock"></i> Day 1</span>
+          </div>
+        </div>
+
+        <!-- ── Step 2 ── -->
+        <div class="timeline-item reveal delay-1">
+          <div class="timeline-icon"><i class="fa-solid fa-pencil-ruler"></i></div>
+          <div class="timeline-content">
+            <span class="tl-step">Step 02</span>
+            <h3>Design &amp; Concept</h3>
+            <p>
+              Our designer translates your ideas into detailed sketches and 3D CAD
+              renderings. You'll see exactly how your piece will look before a single
+              gram of gold is touched.
+            </p>
+            <span class="tl-duration"><i class="fa-regular fa-clock"></i> Days 2–5</span>
+          </div>
+        </div>
+
+        <!-- ── Step 3 ── -->
+        <div class="timeline-item reveal delay-2">
+          <div class="timeline-icon"><i class="fa-solid fa-gem"></i></div>
+          <div class="timeline-content">
+            <span class="tl-step">Step 03</span>
+            <h3>Material Selection</h3>
+            <p>
+              Choose your gold purity, metal type, and diamonds or gemstones.
+              We source only conflict-free, certified stones and present options
+              that suit your vision and budget perfectly.
+            </p>
+            <span class="tl-duration"><i class="fa-regular fa-clock"></i> Days 5–7</span>
+          </div>
+        </div>
+
+        <!-- ── Step 4 ── -->
+        <div class="timeline-item reveal delay-1">
+          <div class="timeline-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+          <div class="timeline-content">
+            <span class="tl-step">Step 04</span>
+            <h3>Crafting &amp; Setting</h3>
+            <p>
+              Master goldsmiths bring your design to life — casting, hand-finishing,
+              and setting every stone with precision. Each step is photographed
+              so you can follow the journey.
+            </p>
+            <span class="tl-duration"><i class="fa-regular fa-clock"></i> Weeks 1–2</span>
+          </div>
+        </div>
+
+        <!-- ── Step 5 ── -->
+        <div class="timeline-item reveal delay-2">
+          <div class="timeline-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <div class="timeline-content">
+            <span class="tl-step">Step 05</span>
+            <h3>Quality Inspection</h3>
+            <p>
+              Before delivery, every piece undergoes a rigorous quality inspection
+              to ensure it meets our exacting luxury standards. Certificates are
+              prepared for diamonds and precious metals.
+            </p>
+            <span class="tl-duration"><i class="fa-regular fa-clock"></i> Day 28–30</span>
+          </div>
+        </div>
+
+        <!-- ── Step 6 ── -->
+        <div class="timeline-item reveal delay-3">
+          <div class="timeline-icon"><i class="fa-solid fa-box-open"></i></div>
+          <div class="timeline-content">
+            <span class="tl-step">Step 06</span>
+            <h3>Delivery &amp; Reveal</h3>
+            <p>
+              Your treasure arrives in a signature <em>Custom By Thu Win</em> Luxury Box, ready to be gifted or worn with our complimentary FedEx Overnight Insured Package. We also offer a free resizing or adjustment within 30 days.
+            </p>
+            <span class="tl-duration"><i class="fa-regular fa-clock"></i> Weeks 2–3</span>
+          </div>
+        </div>
+
+        <!-- ══ ADD MORE STEPS BELOW THIS COMMENT ══
+        <div class="timeline-item reveal">
+          <div class="timeline-icon"><i class="fa-solid fa-star"></i></div>
+          <div class="timeline-content">
+            <span class="tl-step">Step 07</span>
+            <h3>Your Step Title</h3>
+            <p>Your step description here.</p>
+            <span class="tl-duration"><i class="fa-regular fa-clock"></i> Timeline</span>
+          </div>
+        </div>
+        ══════════════════════════════════════ -->
+
+      </div><!-- end .timeline -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PORTFOLIO
+  ══════════════════════════════════════ -->
+  <section id="portfolio" class="section portfolio-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Our Work</p>
+        <h2 class="section-title">Portfolios</h2>
+        <div class="gold-divider center"></div>
+        <p class="section-desc">
+          Every piece tells a unique story. Explore our collection of handcrafted
+          custom jewelry — each one made exclusively for its owner.
+        </p>
+      </div>
+
+      <!-- Instagram Connect Banner -->
+      <div class="ig-banner reveal">
+        <i class="fa-brands fa-instagram"></i>
+        <div class="ig-text">
+          <strong>Follow us on Instagram</strong>
+          <span>@CustomByThuWin — for daily inspiration and behind-the-scenes</span>
+        </div>
+        <a href="https://instagram.com/CustomByThuWin" target="_blank" class="btn btn-gold btn-sm">
+          Follow Us
+        </a>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- ══ PORTFOLIO ITEM — duplicate this block to add more ══ -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-media">
+            <video src="video/engagement-ring.mov" autoplay muted loop playsinline></video>
+            <div class="portfolio-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-type">Custom Engagement Ring</span>
+            <h3>18k Yellow Gold with Natural Emerald and Natural VS Marquise Diamond Engagement Ring</h3>
+            <p>A timeless Marquise-cut VS Diamond set and Natural Columbian Emerald set in 18k Yellow Gold.</p>
+            <div class="portfolio-tags">
+              <span>Rose Gold</span><span>Oval Diamond</span><span>Engagement</span>
+            </div>
+          </div>
+        </div>
+
+<!-- ══ PORTFOLIO ITEM 3 ══ -->
+        <div class="portfolio-card reveal delay-2">
+          <div class="portfolio-media">
+            <video src="video/horseshoe-pendant.mov" autoplay muted loop playsinline></video>
+            <div class="portfolio-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-type">Memorial Piece</span>
+            <h3>14k Yellow Gold with Natural VS Diamond Realistic Enamel Horseshoe Pendant</h3>
+            <p>Customer wants to give his mother beautiful and memorial pendant as her horse died. So we made this beautiful piece for her.</p>
+            <div class="portfolio-tags">
+              <span>14k Yellow Gold</span><span>Natural VS Diamond</span><span>Enamel</span><span>Memorial</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ PORTFOLIO ITEM 4 ══ -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-media">
+            <img src="img/portfolio/pendant-cartoon.jpg" alt="Custom Cartoon Pendant" />
+            <div class="portfolio-overlay">
+              <i class="fa-solid fa-expand"></i>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-type">Custom Pendant</span>
+            <h3>14k Yellow Gold with Realistic Enamel Work with Natural VS Diamond Pendant</h3>
+            <p>Personalized Cartoon Pendant crafted in 14k Yellow Gold, Gifted for himself with his favorite cartoon character.</p>
+            <div class="portfolio-tags">
+              <span>14k Yellow Gold</span><span>Enamel</span><span>Natural VS Diamond</span><span>Personalized</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ ADD MORE PORTFOLIO ITEMS BELOW THIS COMMENT ══
+        <div class="portfolio-card reveal">
+          <div class="portfolio-media">
+            <img src="img/portfolio/your-image.jpg" alt="Project Title" />
+            <div class="portfolio-overlay"><i class="fa-solid fa-expand"></i></div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-type">Project Type</span>
+            <h3>Project Title</h3>
+            <p>Your project description here.</p>
+            <div class="portfolio-tags">
+              <span>Tag 1</span><span>Tag 2</span>
+            </div>
+          </div>
+        </div>
+        ══════════════════════════════════════ -->
+
+      </div><!-- end .portfolio-grid -->
+
+      <!-- Instagram Feed Embed (optional — paste Elfsight / Behold widget code here) -->
+      <!-- <div class="ig-feed-embed">
+        PASTE YOUR INSTAGRAM WIDGET EMBED CODE HERE
+      </div> -->
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       BOOK FREE APPOINTMENT
+  ══════════════════════════════════════ -->
+  <section id="appointment" class="section appointment-section">
+    <div class="appt-bg-overlay"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Begin Your Journey</p>
+        <h2 class="section-title">Book a Free<br /><em>Appointment</em></h2>
+        <div class="gold-divider center"></div>
+        <p class="section-desc">
+          Share your vision with us. Our consultation is completely complimentary —
+          with no obligation. We'll guide you every step of the way.
+        </p>
+      </div>
+
+      <form class="appt-form reveal" id="appointmentForm"
+            action="https://formsubmit.co/info@wingroupjewelry.com" method="POST">
+
+        <!-- FormSubmit config (change redirect URL to your thank-you page) -->
+        <input type="hidden" name="_subject"  value="New Appointment Request — Custom By Thu Win" />
+        <input type="hidden" name="_captcha"  value="false" />
+        <input type="hidden" name="_template" value="table" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Full Name <span class="req">*</span></label>
+            <input type="text" id="fname" name="Full Name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input type="email" id="email" name="Email" placeholder="your@email.com" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="Phone Number" placeholder="+1 (000) 000-0000" required />
+          </div>
+          <div class="form-group">
+            <label for="budget">Your Budget</label>
+            <select id="budget" name="Budget">
+              <option value="" disabled selected>Select a budget range</option>
+              <option>Under $1,000</option>
+              <option>$1,000 – $3,000</option>
+              <option>$3,000 – $5,000</option>
+              <option>$5,000 – $10,000</option>
+              <option>$10,000 – $20,000</option>
+              <option>$20,000+</option>
+              <option>I'd like to discuss</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Gold Options</label>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="Gold Options" value="Yellow Gold 10K" /><span>Yellow Gold 10K</span></label>
+              <label class="check-label"><input type="checkbox" name="Gold Options" value="Yellow Gold 14K" /><span>Yellow Gold 14K</span></label>
+              <label class="check-label"><input type="checkbox" name="Gold Options" value="Yellow Gold 18K" /><span>Yellow Gold 18K</span></label>
+              <label class="check-label"><input type="checkbox" name="Gold Options" value="Yellow Gold 22K" /><span>Yellow Gold 22K</span></label>
+              <label class="check-label"><input type="checkbox" name="Gold Options" value="White Gold 14K" /><span>White Gold 14K</span></label>
+              <label class="check-label"><input type="checkbox" name="Gold Options" value="White Gold 18K" /><span>White Gold 18K</span></label>
+              <label class="check-label"><input type="checkbox" name="Gold Options" value="Rose Gold 14K" /><span>Rose Gold 14K</span></label>
+              <label class="check-label"><input type="checkbox" name="Gold Options" value="Rose Gold 18K" /><span>Rose Gold 18K</span></label>
+              <label class="check-label"><input type="checkbox" name="Gold Options" value="Platinum" /><span>Platinum</span></label>
+              <label class="check-label"><input type="checkbox" name="Gold Options" value="Not Sure" /><span>Not Sure — Help Me Choose</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Diamond Options</label>
+            <div class="checkbox-group">
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="Round Brilliant" /><span>Round Brilliant</span></label>
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="Princess Cut" /><span>Princess Cut</span></label>
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="Cushion Cut" /><span>Cushion Cut</span></label>
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="Oval Cut" /><span>Oval Cut</span></label>
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="Emerald Cut" /><span>Emerald Cut</span></label>
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="Pear Shape" /><span>Pear Shape</span></label>
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="Marquise" /><span>Marquise</span></label>
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="Radiant Cut" /><span>Radiant Cut</span></label>
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="Asscher Cut" /><span>Asscher Cut</span></label>
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="No Diamond — Gemstones" /><span>No Diamond — Gemstones</span></label>
+              <label class="check-label"><input type="checkbox" name="Diamond Options" value="Not Sure" /><span>Not Sure — Help Me Choose</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="comments">Additional Comments</label>
+          <textarea id="comments" name="Comments" rows="5"
+                    placeholder="Tell us more — your occasion, style inspiration, any specific requests or questions…"></textarea>
+        </div>
+
+        <div class="form-footer">
+          <p class="form-note"><i class="fa-solid fa-lock"></i> Your information is kept private and never shared.</p>
+          <button type="submit" class="btn btn-gold btn-lg">
+            <i class="fa-regular fa-calendar-check"></i> Request My Free Appointment
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-main">Custom By Thu Win</span>
+        <span class="logo-sub">Luxury Jewelry</span>
+        <p class="footer-tagline">Your vision. Our craft. A treasure forever.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#appointment">Book Appointment</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://instagram.com/CustomByThuWin" target="_blank" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Custom By Thu Win. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox overlay for portfolio -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
