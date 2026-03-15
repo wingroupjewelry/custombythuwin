@@ -291,30 +291,10 @@ function buildProjectCard(p) {
   const card = document.createElement('div');
   card.className = `project-card status-${statusClass}`;
 
-  // 3D Viewer (iJewel3D embed) — shown instead of cover when viewer_url is set
-  const viewerHtml = p.viewer_url
-    ? `<div class="project-viewer-wrap">
-         <iframe
-           class="project-viewer-iframe"
-           src="${escHtml(p.viewer_url)}"
-           title="3D Preview — ${escHtml(p.name)}"
-           frameborder="0"
-           allowfullscreen
-           allow="autoplay; fullscreen; xr-spatial-tracking"
-           loading="lazy"
-         ></iframe>
-         <div class="project-viewer-label">
-           <i class="fa-solid fa-cube"></i> Interactive 3D Preview — drag to rotate
-         </div>
-       </div>`
-    : '';
-
-  // Cover image (shown only when no viewer_url)
-  const coverHtml = !p.viewer_url
-    ? (p.cover
-        ? `<img class="project-card-cover" src="${escHtml(p.cover)}" alt="${escHtml(p.name)}" loading="lazy" />`
-        : `<div class="project-card-cover-placeholder"><i class="fa-solid fa-gem"></i></div>`)
-    : '';
+  // Cover image (always shown if available)
+  const coverHtml = p.cover
+    ? `<img class="project-card-cover" src="${escHtml(p.cover)}" alt="${escHtml(p.name)}" loading="lazy" />`
+    : `<div class="project-card-cover-placeholder"><i class="fa-solid fa-gem"></i></div>`;
 
   // Meta rows (only show if value exists)
   const metaRows = [
@@ -334,8 +314,14 @@ function buildProjectCard(p) {
        </a>`
     : '';
 
+  // 3D viewer button
+  const viewerBtnHtml = p.viewer_url
+    ? `<a class="project-deliverable-btn project-viewer-btn" href="${escHtml(p.viewer_url)}" target="_blank" rel="noopener">
+         <i class="fa-solid fa-cube"></i> View 3D Preview
+       </a>`
+    : '';
+
   card.innerHTML = `
-    ${viewerHtml}
     ${coverHtml}
     <div class="project-card-body">
       <div class="project-card-header">
@@ -347,8 +333,9 @@ function buildProjectCard(p) {
       ${p.description ? `<p class="project-description">${escHtml(p.description)}</p>` : ''}
       ${metaRows ? `<div class="project-meta">${metaRows}</div>` : ''}
     </div>
-    ${deliverableHtml || p.last_updated ? `
+    ${viewerBtnHtml || deliverableHtml || p.last_updated ? `
     <div class="project-card-footer">
+      ${viewerBtnHtml}
       ${deliverableHtml}
       ${p.last_updated ? `<span class="project-last-updated">Updated ${escHtml(p.last_updated)}</span>` : ''}
     </div>` : ''}
