@@ -35,6 +35,7 @@ const DEMO_PROJECTS = [
     ring_size: '6.5',
     project_num: 'CBTW-2026-001',
     cover: '',
+    viewer_url: '',           // ← paste your iJewel3D public share/embed URL here
     last_updated: 'March 5, 2026',
   },
   {
@@ -52,6 +53,7 @@ const DEMO_PROJECTS = [
     ring_size: '',
     project_num: 'CBTW-2025-048',
     cover: '',
+    viewer_url: '',           // ← paste your iJewel3D public share/embed URL here
     last_updated: 'December 22, 2025',
   },
   {
@@ -69,6 +71,7 @@ const DEMO_PROJECTS = [
     ring_size: '7',
     project_num: 'CBTW-2026-009',
     cover: '',
+    viewer_url: '',           // ← paste your iJewel3D public share/embed URL here
     last_updated: 'March 6, 2026',
   },
 ];
@@ -288,10 +291,30 @@ function buildProjectCard(p) {
   const card = document.createElement('div');
   card.className = `project-card status-${statusClass}`;
 
-  // Cover image
-  const coverHtml = p.cover
-    ? `<img class="project-card-cover" src="${escHtml(p.cover)}" alt="${escHtml(p.name)}" loading="lazy" />`
-    : `<div class="project-card-cover-placeholder"><i class="fa-solid fa-gem"></i></div>`;
+  // 3D Viewer (iJewel3D embed) — shown instead of cover when viewer_url is set
+  const viewerHtml = p.viewer_url
+    ? `<div class="project-viewer-wrap">
+         <iframe
+           class="project-viewer-iframe"
+           src="${escHtml(p.viewer_url)}"
+           title="3D Preview — ${escHtml(p.name)}"
+           frameborder="0"
+           allowfullscreen
+           allow="autoplay; fullscreen; xr-spatial-tracking"
+           loading="lazy"
+         ></iframe>
+         <div class="project-viewer-label">
+           <i class="fa-solid fa-cube"></i> Interactive 3D Preview — drag to rotate
+         </div>
+       </div>`
+    : '';
+
+  // Cover image (shown only when no viewer_url)
+  const coverHtml = !p.viewer_url
+    ? (p.cover
+        ? `<img class="project-card-cover" src="${escHtml(p.cover)}" alt="${escHtml(p.name)}" loading="lazy" />`
+        : `<div class="project-card-cover-placeholder"><i class="fa-solid fa-gem"></i></div>`)
+    : '';
 
   // Meta rows (only show if value exists)
   const metaRows = [
@@ -312,6 +335,7 @@ function buildProjectCard(p) {
     : '';
 
   card.innerHTML = `
+    ${viewerHtml}
     ${coverHtml}
     <div class="project-card-body">
       <div class="project-card-header">

@@ -94,6 +94,7 @@ function parseNotionPage(page) {
     description:  getRichText(props, 'Comments '),
     start_date:   getDate(props, 'Start Date'),
     deliverable:  getUrl(props, 'Drive Link '),
+    viewer_url:   getUrl(props, '3D Viewer URL'),
     metal,
     jewelry_type: getSelect(props, 'Jewelry Type'),
     diamond:      getSelect(props, 'Natural or Lab Diamond'),
