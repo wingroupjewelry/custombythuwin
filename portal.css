@@ -3,52 +3,6 @@
    Client Portal Styles
 ═══════════════════════════════════════════════ */
 
-/* ── Internal Tools Bar ───────────────────────── */
-.internal-tools-bar {
-  background: rgba(201,169,110,0.06);
-  border-bottom: 1px solid rgba(201,169,110,0.15);
-  padding: 0.6rem 0;
-}
-
-.internal-tools-bar .container {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.internal-tools-label {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold, #c9a96e);
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  opacity: 0.7;
-}
-
-.internal-tool-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--white, #fff);
-  text-decoration: none;
-  border: 1px solid rgba(201,169,110,0.3);
-  padding: 0.4rem 0.9rem;
-  transition: 0.3s ease;
-}
-.internal-tool-btn:hover {
-  border-color: var(--gold, #c9a96e);
-  color: var(--gold, #c9a96e);
-  background: rgba(201,169,110,0.06);
-}
-.internal-tool-btn i { font-size: 0.75rem; }
-
 /* ── iJewel3D 3D Viewer Embed ──────────────────── */
 .project-viewer-embed {
   width: 100%;
